@@ -1,0 +1,846 @@
+
+/* =========================
+   GENERAL
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #222;
+    color: white;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: Arial, sans-serif;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 95px;
+    padding: 12px 25px;
+    background: #111;
+    color: white;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d4af37;
+    color: #111;
+    font-size: 27px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.shop-title {
+    min-width: 0;
+}
+
+.shop-title h1 {
+    margin: 0;
+    font-size: 27px;
+    line-height: 1.3;
+    color: white;
+}
+
+.shop-title p {
+    margin: 8px 0 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+/* =========================
+   HEADER RIGHT ALIGNMENT
+========================= */
+.header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.header-right button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 18px;
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    background: #d4af37;
+    color: #111;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* =========================
+   MENU
+========================= */
+.menu {
+    display: none;
+    padding: 12px 20px;
+    background: #666;
+    text-align: right;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 12px 18px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.menu a:hover {
+    background: #d4af37;
+    color: #111;
+}
+
+/* =========================
+   WELCOME SECTION
+========================= */
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 35px;
+    background: #222;
+}
+
+.welcome-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.welcome-text h2 {
+    margin: 0;
+    font-size: 42px;
+    line-height: 1.2;
+    color: white;
+}
+
+.welcome-text h3 {
+    margin: 25px 0 15px;
+    font-size: 23px;
+}
+
+.welcome-text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.photo-slider {
+    width: 48%;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.photo-slider img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.slider-controls {
+    margin-top: 10px;
+}
+
+.slider-controls button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    background: #d4af37;
+    cursor: pointer;
+}
+
+/* =========================
+   CATEGORY SECTION
+========================= */
+.category-section {
+    padding: 25px;
+    text-align: center;
+    background: #111;
+}
+
+.category-section h2,
+.product-section > h2 {
+    margin: 15px 0 25px;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* CATEGORY TABLE */
+.category-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #222;
+}
+
+.category-table th,
+.category-table td {
+    padding: 14px;
+    border: 1px solid #222;
+    text-align: center;
+}
+
+.category-table th {
+    background: #222;
+    color: white;
+}
+
+.category-table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.category-table a {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 4px;
+    background: #d4af37;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.category-table a:hover {
+    background: #d4af37;
+    color: #111;
+}
+
+/* =========================
+   HOME PAGE PRODUCTS
+========================= */
+.product-section {
+    padding: 30px;
+    background: #f4f4f4;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+    padding: 18px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #ccc;
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: contain;
+}
+
+.product-card h3 {
+    min-height: 42px;
+    margin: 12px 0;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.stock {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.order-button {
+    display: inline-block;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 5px;
+    background: #d4af37;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.order-button:hover {
+    background: #d4af37;
+}
+
+.out-stock {
+    position: absolute;
+    top: 43%;
+    left: -10%;
+    width: 120%;
+    padding: 13px;
+    transform: rotate(-12deg);
+    background: rgba(180, 0, 0, 0.92);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* =========================
+   BEER PAGE
+========================= */
+.beer-header {
+    padding: 22px 15px;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.beer-header h1 {
+    margin: 0;
+    color: #d4af37;
+}
+
+.beer-header p {
+    margin-bottom: 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 18px;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    background: #d4af37;
+    color: #111;
+}
+
+.beer-heading {
+    margin: 10px 0 25px;
+    text-align: center;
+}
+
+/* BEER PRICE FILTER */
+.price-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px;
+}
+
+.price-filter label {
+    font-weight: bold;
+}
+
+.price-filter select {
+    padding: 11px 15px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* BEER BRAND CARDS */
+.beer-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    padding: 20px 25px 35px;
+}
+
+.beer-card {
+    position: relative;
+    overflow: hidden;
+    padding: 18px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #ccc;
+}
+
+.beer-card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+}
+
+.beer-card h3 {
+    min-height: 40px;
+    margin: 12px 0;
+}
+
+.beer-card .price {
+    color: #d4af37;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.beer-card .stock {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.order-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #d4af37;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.order-btn:hover {
+    background: #d4af37;
+}
+
+.beer-card .out-stock {
+    position: absolute;
+    top: 43%;
+    left: -10%;
+    width: 120%;
+    padding: 12px;
+    transform: rotate(-12deg);
+    background: rgba(180, 0, 0, 0.92);
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* =========================
+   ORDER POPUP
+========================= */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.popup-content {
+    position: relative;
+    width: 450px;
+    max-width: 100%;
+    margin: 25px auto;
+    padding: 28px;
+    border-radius: 10px;
+    background: white;
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    border: none;
+    background: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.popup-content label {
+    display: block;
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+.popup-content input,
+.popup-content textarea,
+.popup-content select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.popup-content textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+.confirm-button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 5px;
+    background: #d4af37;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confirm-button:hover {
+    background: #d4af37;
+}
+
+.note {
+    color: #666;
+    font-size: 12px;
+}
+
+.success-content {
+    text-align: center;
+}
+
+.success-content h1 {
+    color: #d4af37;
+    font-size: 65px;
+}
+
+.token {
+    padding: 15px;
+    background: #222;
+    color: #f0cc50;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   ADMIN LOGIN
+========================= */
+.admin-corner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.admin-corner a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 5px;
+    background: #d4af37;
+    color: #111;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.admin-corner a:hover {
+    background: white;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    padding: 30px;
+    background: #111;
+    color: white;
+    text-align: center;
+    line-height: 1.7;
+}
+
+footer a {
+    color: #d4af37;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1100px) {
+    .header {
+        gap: 12px;
+        padding: 12px 16px;
+    }
+
+    .shop-title h1 {
+        font-size: 22px;
+    }
+
+    .header-right {
+        gap: 8px;
+    }
+
+    .header-right button {
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+    .products,
+    .beer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .welcome-text h2 {
+        font-size: 34px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 650px) {
+    .header {
+        flex-wrap: wrap;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 52px;
+        height: 52px;
+        font-size: 22px;
+    }
+
+    .shop-title {
+        flex: 1;
+    }
+
+    .shop-title h1 {
+        font-size: 18px;
+    }
+
+    .shop-title p {
+        font-size: 10px;
+        letter-spacing: 0.5px;
+    }
+
+    .header-right {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .header-right button {
+        min-height: 40px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .header-right span {
+        font-size: 12px;
+    }
+
+    .header-right .menu-button {
+        width: 42px;
+        height: 42px;
+        min-height: 42px;
+        font-size: 24px;
+    }
+
+    .menu {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu a {
+        display: block;
+        padding: 12px;
+    }
+
+    .welcome {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .welcome-text,
+    .photo-slider {
+        width: 100%;
+    }
+
+    .welcome-text h2 {
+        font-size: 30px;
+    }
+
+    .welcome-text h3 {
+        font-size: 20px;
+    }
+
+    .photo-slider img {
+        height: 220px;
+    }
+
+    .category-section {
+        padding: 15px 8px;
+    }
+
+    .category-section h2,
+    .product-section > h2 {
+        font-size: 23px;
+    }
+
+    .category-table {
+        width: 100%;
+    }
+
+    .category-table th,
+    .category-table td {
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+
+    .category-table a {
+        padding: 7px 5px;
+        font-size: 11px;
+    }
+
+    .product-section {
+        padding: 18px;
+    }
+
+    .products,
+    .beer-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+
+    .beer-container {
+        padding: 15px;
+    }
+
+    .beer-card img {
+        height: 220px;
+    }
+
+    .price-filter {
+        margin: 15px 8px;
+    }
+
+    .price-filter select {
+        max-width: 100%;
+    }
+
+    .popup {
+        padding: 12px;
+    }
+
+    .popup-content {
+        margin: 15px auto;
+        padding: 22px;
+    }
+
+    .success-content h1 {
+        font-size: 48px;
+    }
+
+    .token {
+        font-size: 20px;
+    }
+
+    .admin-corner {
+        justify-content: center;
+    }
+
+    footer {
+        padding: 22px 12px;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 380px) {
+    .shop-title h1 {
+        font-size: 16px;
+    }
+
+    .shop-title p {
+        font-size: 9px;
+    }
+
+    .header-right {
+        gap: 5px;
+    }
+
+    .header-right button {
+        padding: 0 7px;
+        font-size: 10px;
+    }
+
+    .welcome-text h2 {
+        font-size: 26px;
+    }
+
+    .category-table th,
+    .category-table td {
+        padding: 6px 2px;
+        font-size: 10px;
+    }
+
+    .category-table a {
+        font-size: 10px;
+        padding: 6px 4px;
+    }
+}
+
+
+.my-orders-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #d4af37;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.my-orders-btn:hover {
+    background: #d4af37;
+}
